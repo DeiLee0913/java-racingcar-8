@@ -2,24 +2,28 @@ package racingcar.controller;
 
 import racingcar.util.NameParser;
 import racingcar.util.NameValidator;
+import racingcar.util.TryCountValidator;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
 import java.util.List;
 
 public class CarRacingController {
+    // TODO: 컨트롤러 구현 완료시 필요 필드에 FINAL 추가
     private InputView inputView;
     private OutputView outputView;
 
     private NameParser nameParser;
     private NameValidator nameValidator;
+    private TryCountValidator tryCountValidator;
 
-
-    CarRacingController(InputView inputView, OutputView outputView, NameParser nameParser, NameValidator nameValidator) {
+    public CarRacingController(InputView inputView, OutputView outputView,
+                        NameParser nameParser, NameValidator nameValidator,  TryCountValidator tryCountValidator) {
         this.inputView = inputView;
         this.outputView = outputView;
         this.nameParser = nameParser;
         this.nameValidator = nameValidator;
+        this.tryCountValidator = tryCountValidator;
     }
     public void run() {
         // 1. 입력 받기
@@ -29,6 +33,7 @@ public class CarRacingController {
         // 2. 입력 검증 및 변환
         String[] names = nameParser.parseNames(rawNames);
         nameValidator.validate(names);
+        tryCountValidator.validate(rawTryCount);
 
         // 3. 자동차 객체 생성 및 게임 초기화
         // TODO: Car 객체 생성 로직 추가 예정
