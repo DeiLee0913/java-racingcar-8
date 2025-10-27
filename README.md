@@ -52,32 +52,30 @@
 
 ### 3) 게임 초기화
 
-- [ ]  유효한 이름 목록으로 `Car` 인스턴스 생성 (초기 position=0)
-- [ ]  `RacingGame`에 `cars`, `tryCount`, `MoveRule`(기본: RandomMoveRule) 주입
+- [X]  유효한 이름 목록으로 `Car` 인스턴스 생성 (초기 position=0)
+- [x]  `RacingGame`에 `cars`, `tryCount`, `MoveRule`(기본: RandomMoveRule) 주입
 
 ### 4) 라운드 진행 및 출력
 
-- [ ]  총 `tryCount` 만큼 라운드를 반복한다.
-- [ ]  각 라운드에서 모든 차에 대해:
-    - [ ]  0~9 정수 1개를 뽑는다: `Randoms.pickNumberInRange(0, 9)`
-    - [ ]  값이 4 이상이면 전진(+=1)
-- [ ]  라운드 종료 후 **즉시** 차수별 실행 결과를 출력한다.
-    
+- [X]  총 `tryCount` 만큼 라운드를 반복한다.
+- [X]  각 라운드에서 모든 차에 대해:
+    - [X]  0~9 정수 1개를 뽑는다: `Randoms.pickNumberInRange(0, 9)`
+    - [X]  값이 4 이상이면 전진(+=1)
+- [x]  라운드 종료 후 **즉시** 차수별 실행 결과를 출력한다.
     포맷: `이름 : -----` (position 개수만큼 `-`)
     
-- [ ]  I/O는 View가 담당하며, 도메인은 **상태만** 책임진다.
 
 ### 5) 우승자 판정 및 출력
 
-- [ ]  모든 라운드 종료 후 최대 position을 구한다.
-- [ ]  최대 position을 가진 모든 자동차 이름을 **입력 순서**대로 모은다.
+- [x]  모든 라운드 종료 후 최대 position을 구한다.
+- [x]  최대 position을 가진 모든 자동차 이름을 **입력 순서**대로 모은다.
 - [X]  출력 포맷: `최종 우승자 : pobi, jun`
 
 ### 6) 예외 처리 정책
 
-- [ ]  검증 실패 시 반드시 `IllegalArgumentException`을 던지고 **즉시 종료**
-- [ ]  메시지 가이드(예시)
+- [x]  검증 실패 시 반드시 `IllegalArgumentException`을 던지고 **즉시 종료**
+- [x]  메시지 가이드 
     - `[ERROR] 이름은 1~5자여야 합니다.`
     - `[ERROR] 빈 이름은 허용되지 않습니다.`
     - `[ERROR] 시도 횟수는 1 이상의 정수여야 합니다.`
-- [ ]  `System.exit()` 호출 금지
+- [x]  `System.exit()` 호출 금지
